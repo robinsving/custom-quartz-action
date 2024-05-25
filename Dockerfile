@@ -1,7 +1,7 @@
 ARG NODE_VERSION=20
-ARG QUARTZ_REPO 
 FROM node:$NODE_VERSION-alpine
 
+ARG QUARTZ_REPO
 WORKDIR /quartz
 
 RUN apk add git

@@ -54,7 +54,7 @@ Custom configuration, layout files, and quartz repository can be included like t
           source: example_projects/custom_theme/content
           quartz_config: example_projects/custom_theme/quartz.config.ts
           quartz_layout: example_projects/custom_theme/quartz.layout.ts
-          quarts_repo: https://github.com/robinsving/quartz
+          quartz_repo: https://github.com/robinsving/quartz
 ```
 
 ### Action inputs
