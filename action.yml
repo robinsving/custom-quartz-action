@@ -1,4 +1,4 @@
-name: 'Build Quartz for GitHub Pages'
+name: 'Build Quartz for GitHub Pages using custom Quartz base'
 description: 'A simple GitHub Action for producing Quartz build artifacts'
 author: 'robinsving'
 branding:
