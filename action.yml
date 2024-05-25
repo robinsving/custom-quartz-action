@@ -1,6 +1,6 @@
 name: 'Build Quartz for GitHub Pages'
 description: 'A simple GitHub Action for producing Quartz build artifacts'
-author: 'konstfish'
+author: 'robinsving'
 branding:
   icon: 'book-open'
   color: 'purple'
@@ -21,6 +21,10 @@ inputs:
     description: 'Base URL (Required when setting icon or banner)'
     required: false
     default: 'example.com'
+  quartz_repo:
+    description: 'Quartz repository'
+    required: false
+    default: 'https://github.com/jackyzha0/quartz.git'
   quartz_config:
     description: 'Path to custom Quartz config file'
     required: false
@@ -35,5 +39,10 @@ inputs:
     required: false
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "composite"
+  steps:
+    - name: Build and run Docker container
+      run: |
+        docker build --build-arg QUARTZ_REPO=${{ inputs.quartz_repo }} -t my-docker-action .
+        docker run my-docker-action
+      shell: bash

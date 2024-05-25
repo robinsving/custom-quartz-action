@@ -1,11 +1,12 @@
 ARG NODE_VERSION=20
+ARG QUARTZ_REPO 
 FROM node:$NODE_VERSION-alpine
 
 WORKDIR /quartz
 
 RUN apk add git
 
-RUN git clone https://github.com/jackyzha0/quartz.git /quartz && cd quartz
+RUN git clone $QUARTZ_REPO /quartz && cd quartz
 
 RUN npm i
 # required as directory was removed from original quartz repo
